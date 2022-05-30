@@ -42,7 +42,8 @@ class ValidationSpec extends munit.FunSuite {
     assert(validatedTxn.isValid)
     val sameAccValidation = validatedTxn <* TransactionValidator.isFromAndToSame(from, from)
     assert(sameAccValidation.isInvalid)
-    assert(sameAccValidation.toEither.leftMap(identity) == Left(NonEmptyList.of(FromAndToAccountCantBeSame)))
+    val errors = sameAccValidation.fold(e => e.toList, s => Nil)
+    assert(errors == List(FromAndToAccountCantBeSame))
   }
 
 }
