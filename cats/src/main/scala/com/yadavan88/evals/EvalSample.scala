@@ -1,3 +1,4 @@
+package com.yadavan88
 import cats.Eval
 object EvalSample extends App {
 
