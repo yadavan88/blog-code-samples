@@ -11,4 +11,11 @@ lazy val cats = project
     )
   )
 
+lazy val scala3 = project
+  .in(file("scala3"))
+  .settings(
+    name := "scala3",
+    scalaVersion := "3.2.0"
+  )
+
  
