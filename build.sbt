@@ -25,6 +25,7 @@ lazy val scala2 = project
   .settings(
     name := "scala2",
     scalaVersion := scala2Version,
+    Test / fork := true,
     libraryDependencies ++= Seq(
       "com.dimafeng" %% "testcontainers-scala-scalatest" % "0.40.11" % "test",
       "com.dimafeng" %% "testcontainers-scala-postgresql" % "0.40.11" % "test",
