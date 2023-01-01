@@ -8,3 +8,4 @@ Blog Links
 - [Compile time error generation using inline in Scala 3](https://yadukrishnan.live/compile-time-error-generation-using-inline-in-scala-3)
 - [Integration testing using TestContainers-Scala and Docker](https://yadukrishnan.live/easy-integration-testing-with-testcontainer-scala)
 - [Tuple Improvements in Scala 3](https://yadukrishnan.live/tuple-improvements-in-scala-3)
+- [ULID - Sortable Unique Identifier](https://yadukrishnan.live/ulid-sortable-unique-identifier)
