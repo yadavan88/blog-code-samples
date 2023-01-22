@@ -54,12 +54,12 @@ class PostgresDAO(config: DBConfig) {
   def saveMovie(movieRow: Movie): IO[Unit] = {
     PGDBConnection.getSession(config).use { session =>
       for {
-        insert <- session
+        cmd <- session
           .prepare(
             sql"insert into public.movie values($int8, $varchar)".command
               .gcontramap[Movie]
           )
-          .use(_.execute(movieRow))
+        insert <- cmd.execute(movieRow)  
       } yield insert
     }
   }.void
