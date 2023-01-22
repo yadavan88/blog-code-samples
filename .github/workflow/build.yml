@@ -2,10 +2,10 @@ name: Scala CI
 on:
   push:
     branches:
-        - master
+        - main
   pull_request:
     branches:
-        - master
+        - main
 jobs:
   docker:
     timeout-minutes: 10
