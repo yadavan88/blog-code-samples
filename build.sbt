@@ -17,7 +17,7 @@ lazy val scala3 = project
   .in(file("scala3"))
   .settings(
     name := "scala3",
-    scalaVersion := "3.2.0"
+    scalaVersion := "3.2.1"
   )
 
 val testContainersVersion = "0.40.12"
