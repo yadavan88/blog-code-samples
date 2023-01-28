@@ -79,18 +79,17 @@ object TransactionValidator {
       .toValidatedNel
   }
 
-
   def validateTransaction(
-        fromAccount: String,
-        toAccount: String,
-        amount: Long
-    ): ValidatedNel[BankValidation, Transaction] = {
-      (
-        validateAccount(fromAccount),
-        validateAccount(toAccount),
-        validateAmount(amount)
-      ).mapN(Transaction)
-    }
+      fromAccount: String,
+      toAccount: String,
+      amount: Long
+  ): ValidatedNel[BankValidation, Transaction] = {
+    (
+      validateAccount(fromAccount),
+      validateAccount(toAccount),
+      validateAmount(amount)
+    ).mapN(Transaction)
+  }
 }
 
 import TransactionValidator._

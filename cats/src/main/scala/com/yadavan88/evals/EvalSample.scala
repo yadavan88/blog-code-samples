@@ -72,7 +72,8 @@ object EvalSample extends App {
   val longChainWithMemoize: Eval[String] = Eval
     .always { println("We are in Init Step"); "Init Step" }
     .map { s => println("We are in Step 2"); s + ", Step 2" }
-    .map { s => println("We are in Step 3"); s + ", Step 3" }.memoize
+    .map { s => println("We are in Step 3"); s + ", Step 3" }
+    .memoize
     .map { s => println("We are in Step 4"); s + ", Step 4" }
 
   println(longChainWithMemoize.value)

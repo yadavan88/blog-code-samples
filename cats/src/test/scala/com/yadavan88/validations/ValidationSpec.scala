@@ -25,22 +25,31 @@ class ValidationSpec extends munit.FunSuite {
     val validatedTxn =
       TransactionValidator.validateTransaction("999", "9876543210", 100)
     assert(validatedTxn.isInvalid)
-    assert(validatedTxn.toEither.leftMap(identity) == Left(NonEmptyList.of(InvalidAccount)))
+    assert(
+      validatedTxn.toEither.leftMap(identity) == Left(
+        NonEmptyList.of(InvalidAccount)
+      )
+    )
   }
 
   test("return error if account number and amount is not proper") {
     val validatedTxn =
       TransactionValidator.validateTransaction("999", "9876543210", -100)
     assert(validatedTxn.isInvalid)
-    assert(validatedTxn.toEither.leftMap(identity) == Left(NonEmptyList.of(InvalidAccount, InvalidAmount)))
+    assert(
+      validatedTxn.toEither.leftMap(identity) == Left(
+        NonEmptyList.of(InvalidAccount, InvalidAmount)
+      )
+    )
   }
 
   test("check for same bank account for to and from accounts") {
-      val from = "9876543210"
+    val from = "9876543210"
     val validatedTxn =
       TransactionValidator.validateTransaction(from, from, 100)
     assert(validatedTxn.isValid)
-    val sameAccValidation = validatedTxn <* TransactionValidator.isFromAndToSame(from, from)
+    val sameAccValidation =
+      validatedTxn <* TransactionValidator.isFromAndToSame(from, from)
     assert(sameAccValidation.isInvalid)
     val errors = sameAccValidation.fold(e => e.toList, s => Nil)
     assert(errors == List(FromAndToAccountCantBeSame))

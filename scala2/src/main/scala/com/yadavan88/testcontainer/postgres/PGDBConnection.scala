@@ -59,7 +59,7 @@ class PostgresDAO(config: DBConfig) {
             sql"insert into public.movie values($int8, $varchar)".command
               .gcontramap[Movie]
           )
-        insert <- cmd.execute(movieRow)  
+        insert <- cmd.execute(movieRow)
       } yield insert
     }
   }.void
