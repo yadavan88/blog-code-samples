@@ -8,3 +8,4 @@
 project/project/**
 **/.bloop/**
 **/metals.sbt
+.idea/**

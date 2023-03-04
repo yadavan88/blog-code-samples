@@ -12,12 +12,17 @@ lazy val cats = project
       "org.scalameta" %% "munit" % "0.7.29" % Test
     )
   )
+val diffxVersion = "0.8.2"
 
 lazy val scala3 = project
   .in(file("scala3"))
   .settings(
     name := "scala3",
-    scalaVersion := "3.2.2"
+    scalaVersion := "3.2.2",
+    libraryDependencies ++= Seq(
+      "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
+      "org.scalatest" %% "scalatest-flatspec" % "3.2.15" % Test
+    )
   )
 
 val testContainersVersion = "0.40.12"
