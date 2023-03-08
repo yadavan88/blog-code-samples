@@ -88,11 +88,60 @@ class DiffxSpec extends AnyFlatSpec {
   it should "compare nested fields with collection by ignoring a particular field" in {
     case class Outer(id: Int, inner: Seq[Inner])
     case class Inner(uuid: UUID, value: String)
-    val outer1 = Outer(100, Seq(Inner(UUID.randomUUID(), "Value1"), Inner(UUID.randomUUID(), "Value2")))
-    val outer2 = Outer(100, Seq(Inner(UUID.randomUUID(), "Value1"), Inner(UUID.randomUUID(), "Value2")))
+    val outer1 = Outer(
+      100,
+      Seq(
+        Inner(UUID.randomUUID(), "Value1"),
+        Inner(UUID.randomUUID(), "Value2")
+      )
+    )
+    val outer2 = Outer(
+      100,
+      Seq(
+        Inner(UUID.randomUUID(), "Value1"),
+        Inner(UUID.randomUUID(), "Value2")
+      )
+    )
     given Diff[Outer] = Diff.summon[Outer].ignore(_.inner.each.uuid)
     val res = compare(outer1, outer2)
     println(res.show())
+  }
+
+  it should "ignore all fields of a particular type" in {
+    def randomDateTime = LocalDateTime.now().plusSeconds(Random.nextInt(100))
+    case class InnerData(txnTime: Option[LocalDateTime])
+    case class AuditLog(info: String, inner: InnerData, date: LocalDateTime)
+    case class ComplexData(
+        id: Int,
+        audit: Option[AuditLog],
+        dt: LocalDateTime,
+        ts: LocalDateTime
+    )
+    val complexData1 = ComplexData(
+      1,
+      Some(AuditLog("asd", InnerData(Some(randomDateTime)), randomDateTime)),
+      randomDateTime,
+      randomDateTime
+    )
+    val complexData2 = ComplexData(
+      1,
+      Some(AuditLog("asd", InnerData(Some(randomDateTime)), randomDateTime)),
+      randomDateTime,
+      randomDateTime
+    )
+
+    given Diff[LocalDateTime] = new Diff[LocalDateTime]:
+       override def apply(
+          left: LocalDateTime,
+          right: LocalDateTime,
+          context: DiffContext
+      ): DiffResult = DiffResult.Ignored
+
+    given Diff[ComplexData] = Diff.summon[ComplexData]
+    val compareRes = compare(complexData1, complexData2)
+
+    assert(compareRes.isIdentical, compareRes.show())
+
   }
 
 }
