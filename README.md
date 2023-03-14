@@ -10,3 +10,4 @@ Blog Links
 - [Tuple Improvements in Scala 3](https://yadukrishnan.live/tuple-improvements-in-scala-3)
 - [ULID - Sortable Unique Identifier](https://yadukrishnan.live/ulid-sortable-unique-identifier)
 - [Case class comparison using Diffx](https://yadukrishnan.live/comparing-case-class-instances-using-diffx)
+
