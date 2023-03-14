@@ -18,7 +18,7 @@ pull_request_rules:
 - name: merge Test PRs
   conditions:
   - author=yadavan88
-  - status-success=Scala CI / Build And Test (pull_request)
+  - status-success=Scala CI / Build And Test
   actions:
     merge:
       method: squash
