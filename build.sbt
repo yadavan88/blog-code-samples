@@ -43,6 +43,6 @@ lazy val scala2 = project
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
       "org.wvlet.airframe" %% "airframe-ulid" % "23.3.0",
       "org.scalatestplus" %% "scalacheck-1-17" % "3.2.15.0" % Test,
-      "com.lihaoyi" %% "fansi" % "0.3.1"
+      "com.lihaoyi" %% "fansi" % "0.4.0"
     )
   )
