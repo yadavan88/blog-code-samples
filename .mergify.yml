@@ -10,15 +10,9 @@ pull_request_rules:
 - name: merge scala-steward's PRs
   conditions:
   - author=scala-steward
-  - status-success=Build and Test
+  - status-success=Build And Test
+  - "#files=1"
   actions:
     merge:
       method: squash
 
-- name: merge Test PRs
-  conditions:
-  - author=yadavan88
-  - status-success=Scala CI / Build And Test
-  actions:
-    merge:
-      method: squash
