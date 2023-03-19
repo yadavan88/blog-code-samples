@@ -26,8 +26,10 @@ class DiffxSpec extends AnyFlatSpec {
       SimpleModels.Transaction("txn1", from, to, 100, LocalDateTime.now)
     val txn2 =
       SimpleModels.Transaction("txn1", from, to, 100, LocalDateTime.now)
+
     given Diff[SimpleModels.Transaction] =
       Diff.summon[SimpleModels.Transaction].ignore(_.dt)
+
     val diffResult = compare(txn1, txn2)
     assert(diffResult.isIdentical, diffResult.show())
   }
@@ -49,7 +51,9 @@ class DiffxSpec extends AnyFlatSpec {
     )
 
     given Diff[Transaction] = Diff.summon[Transaction].ignore(_.dt).ignore(_.id)
+
     given Diff[InternalInfo] = Diff.summon[InternalInfo].ignore(_.gatewayTS)
+
     val txn1 = genTxn
     val txn2 = genTxn
     val diffResult = compare(txn1, txn2)
@@ -58,12 +62,15 @@ class DiffxSpec extends AnyFlatSpec {
 
   it should "compare amount values with some error difference (epsilon)" in {
     case class ForexConversion(euros: Double, usd: Double)
+
     def convertToUSD(euros: Double) = (1 + Random.between(0.05d, 0.07d)) * euros
+
     val forex1 = ForexConversion(100, convertToUSD(100))
     val forex2 = ForexConversion(100, convertToUSD(100))
 
     given Diff[ForexConversion] =
       Diff.summon[ForexConversion].modify(_.usd).setTo(Diff.approximate(2d))
+
     val res = compare(forex1, forex2)
     assert(res.isIdentical, res.show())
   }
@@ -72,6 +79,7 @@ class DiffxSpec extends AnyFlatSpec {
     import CustomInstances._
     case class SimpleTransaction(id: String, amount: Int, date: LocalDateTime)
     val dateDiff = new ApproximateDiffForDateTime(50.millis)
+
     given Diff[SimpleTransaction] =
       Diff.summon[SimpleTransaction].modify(_.date).setTo(dateDiff)
 
@@ -102,13 +110,16 @@ class DiffxSpec extends AnyFlatSpec {
         Inner(UUID.randomUUID(), "Value2")
       )
     )
+
     given Diff[Outer] = Diff.summon[Outer].ignore(_.inner.each.uuid)
+
     val res = compare(outer1, outer2)
     println(res.show())
   }
 
   it should "ignore all fields of a particular type" in {
     def randomDateTime = LocalDateTime.now().plusSeconds(Random.nextInt(100))
+
     case class InnerData(txnTime: Option[LocalDateTime])
     case class AuditLog(info: String, inner: InnerData, date: LocalDateTime)
     case class ComplexData(
@@ -131,13 +142,14 @@ class DiffxSpec extends AnyFlatSpec {
     )
 
     given Diff[LocalDateTime] = new Diff[LocalDateTime]:
-       override def apply(
+      override def apply(
           left: LocalDateTime,
           right: LocalDateTime,
           context: DiffContext
       ): DiffResult = DiffResult.Ignored
 
     given Diff[ComplexData] = Diff.summon[ComplexData]
+
     val compareRes = compare(complexData1, complexData2)
 
     assert(compareRes.isIdentical, compareRes.show())
