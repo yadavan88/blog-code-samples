@@ -12,7 +12,7 @@ lazy val cats = project
       "org.scalameta" %% "munit" % "0.7.29" % Test
     )
   )
-val diffxVersion = "0.8.2"
+val diffxVersion = "0.8.3"
 
 lazy val scala3 = project
   .in(file("scala3"))
