@@ -11,3 +11,4 @@ Blog Links
 - [ULID - Sortable Unique Identifier](https://yadukrishnan.live/ulid-sortable-unique-identifier)
 - [Case class comparison using Diffx](https://yadukrishnan.live/comparing-case-class-instances-using-diffx)
 - [Automation Tools for Safer Development](https://yadukrishnan.live/useful-automation-tools-for-scala-development)
+- [Unlocking the Power of SBT - Not-so-common features](https://yadukrishnan.live/unlocking-the-power-of-sbt-a-beginners-guide-to-understanding-not-so-common-features)
