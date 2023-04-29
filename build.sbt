@@ -70,7 +70,7 @@ stopEmbedMongo := {
 }
 addCommandAlias("mongoTests", ";startEmbedMongo;it:test;stopEmbedMongo")
 
-Global / onLoad := { state =>
+Global / onLoad ~= { state =>
   import java.nio.file._
   import java.time.LocalDateTime
   val dummyFile = Paths.get(".dummy")
