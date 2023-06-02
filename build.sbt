@@ -19,7 +19,7 @@ lazy val scala3 = project
   .configs(ManualTestConfig)
   .settings(
     name := "scala3",
-    scalaVersion := "3.2.2",
+    scalaVersion := "3.3.0",
     manualTestSettings,
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,

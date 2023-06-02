@@ -22,7 +22,7 @@ object InlineCompilerError {
 }
 
 object InlineCompilerErrorV2 {
-  inline def checkVersion(inline versionNo: String) = {
+  inline def checkVersion(versionNo: String) = {
     inline if (
       !constValue[Matches[versionNo.type, "[\\d]+\\.[\\d]+[\\.\\d]*"]]
     ) {
