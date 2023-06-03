@@ -57,7 +57,7 @@ class PostgresDAO(config: DBConfig) {
         cmd <- session
           .prepare(
             sql"insert into public.movie values($int8, $varchar)".command
-              .gcontramap[Movie]
+              .to[Movie]
           )
         insert <- cmd.execute(movieRow)
       } yield insert
