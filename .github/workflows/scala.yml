@@ -30,3 +30,8 @@ jobs:
         cache: 'sbt'
     - name: Run Tests
       run: sbt clean scalafmtCheckAll test
+
+    - name: Validate JSON Files
+      uses: OrRosenblatt/validate-json-action@0.1.0
+      env: 
+        INPUT_JSONS: samples/environments/dc.json
