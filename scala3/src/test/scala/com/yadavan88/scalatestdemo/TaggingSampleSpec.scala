@@ -26,7 +26,7 @@ class TaggingSampleSpec extends AnyFlatSpec {
     assert("a" + "b" == "ab")
   }
 
-  it should "run multi-tagged tests" taggedAs(NumericTag, StringTag) in {
+  it should "run multi-tagged tests" taggedAs (NumericTag, StringTag) in {
     succeed
   }
 
