@@ -1,6 +1,7 @@
 name := "blog-code-samples"
 
 val scala2Version = "2.13.11"
+val scala3Version = "3.3.0"
 
 lazy val cats = project
   .in(file("cats"))
@@ -19,11 +20,13 @@ lazy val scala3 = project
   .configs(ManualTestConfig)
   .settings(
     name := "scala3",
-    scalaVersion := "3.3.0",
+    scalaVersion := scala3Version,
     manualTestSettings,
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
-      "org.scalatest" %% "scalatest-flatspec" % "3.2.16" % Test
+      "org.scalatest" %% "scalatest-flatspec" % "3.2.16" % Test,
+      "dev.zio" %% "zio" % "2.0.15",
+      "dev.zio" %% "zio-test" % "2.0.15" % Test
     )
   )
 
