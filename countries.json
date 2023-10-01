@@ -1,0 +1,14 @@
+[
+  {
+  "name": "India",
+  "code": "IN",
+  "capital": "New Delhi",
+  "languages": ["Hindi", "Malayalam", "Tamil"]
+  },
+  {
+  "name": "Germany",
+  "code": "DE",
+  "capital": "Berlin",
+  "languages": ["German"]
+  }
+]
