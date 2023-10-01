@@ -14,3 +14,4 @@ Blog Links
 - [Unlocking the Power of SBT - Not-so-common features](https://yadukrishnan.live/unlocking-the-power-of-sbt-a-beginners-guide-to-understanding-not-so-common-features)
 - [Mastering ScalaTest](https://yadukrishnan.live/mastering-scalatest-exploring-tagging-retry-runner-and-more)
 - [Diving into ZIO Test 'Aspects'](https://yadukrishnan.live/diving-into-zio-test-aspects-streamlining-cross-cutting-concerns-in-testing)
+- [Scala Made Simple for Beginners](https://yadukrishnan.live/scala-made-simple-for-beginners-a-gentle-introduction-to-kickstarting-your-scala-learning)
