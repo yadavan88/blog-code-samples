@@ -10,6 +10,7 @@ Blog Links
 - [Tuple Improvements in Scala 3](https://yadukrishnan.live/tuple-improvements-in-scala-3)
 - [ULID - Sortable Unique Identifier](https://yadukrishnan.live/ulid-sortable-unique-identifier)
 - [Case class comparison using Diffx](https://yadukrishnan.live/comparing-case-class-instances-using-diffx)
+- [Different Ways To Package Scala Application](https://yadukrishnan.live/different-ways-to-package-a-scala-application)
 - [Automation Tools for Safer Development](https://yadukrishnan.live/useful-automation-tools-for-scala-development)
 - [Unlocking the Power of SBT - Not-so-common features](https://yadukrishnan.live/unlocking-the-power-of-sbt-a-beginners-guide-to-understanding-not-so-common-features)
 - [Mastering ScalaTest](https://yadukrishnan.live/mastering-scalatest-exploring-tagging-retry-runner-and-more)
