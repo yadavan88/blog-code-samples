@@ -28,9 +28,17 @@ jlinkIgnoreMissingDependency := JlinkIgnore.only(
 
 //sbt proguard settings
 enablePlugins(SbtProguard)
-Proguard / proguardOptions ++= Seq("-dontoptimize","-dontnote", "-dontwarn", "-ignorewarnings")
-Proguard / proguardOptions += ProguardOptions.keepMain("com.yadavan88.app.mainMethod")
+Proguard / proguardOptions ++= Seq(
+  "-dontoptimize",
+  "-dontnote",
+  "-dontwarn",
+  "-ignorewarnings"
+)
+Proguard / proguardOptions += ProguardOptions.keepMain(
+  "com.yadavan88.app.mainMethod"
+)
 Proguard / proguardInputs := (Compile / dependencyClasspath).value.files
-Proguard / proguardFilteredInputs ++= ProguardOptions.noFilter((Compile / packageBin).value)
+Proguard / proguardFilteredInputs ++= ProguardOptions.noFilter(
+  (Compile / packageBin).value
+)
 Proguard / assemblyJarName := "small-app-proguard.jar"
-
