@@ -4,7 +4,7 @@ name := "small-app"
 scalaVersion := "3.3.0"
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "os-lib" % "0.9.1"
+  "com.lihaoyi" %% "os-lib" % "0.9.2"
 )
 
 //sbt-assembly related settings
@@ -28,9 +28,17 @@ jlinkIgnoreMissingDependency := JlinkIgnore.only(
 
 //sbt proguard settings
 enablePlugins(SbtProguard)
-Proguard / proguardOptions ++= Seq("-dontoptimize","-dontnote", "-dontwarn", "-ignorewarnings")
-Proguard / proguardOptions += ProguardOptions.keepMain("com.yadavan88.app.mainMethod")
+Proguard / proguardOptions ++= Seq(
+  "-dontoptimize",
+  "-dontnote",
+  "-dontwarn",
+  "-ignorewarnings"
+)
+Proguard / proguardOptions += ProguardOptions.keepMain(
+  "com.yadavan88.app.mainMethod"
+)
 Proguard / proguardInputs := (Compile / dependencyClasspath).value.files
-Proguard / proguardFilteredInputs ++= ProguardOptions.noFilter((Compile / packageBin).value)
+Proguard / proguardFilteredInputs ++= ProguardOptions.noFilter(
+  (Compile / packageBin).value
+)
 Proguard / assemblyJarName := "small-app-proguard.jar"
-
