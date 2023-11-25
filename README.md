@@ -1,4 +1,4 @@
-# blog-code-samples
+# Scala Blog Code Samples
 Code samples used in the blog https://yadukrishnan.live
 
 Blog Links
