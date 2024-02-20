@@ -30,7 +30,7 @@ lazy val scala3 = project
     )
   )
 
-val testContainersVersion = "0.41.2"
+val testContainersVersion = "0.41.3"
 
 lazy val scala2 = project
   .in(file("scala2"))
@@ -45,11 +45,11 @@ lazy val scala2 = project
       "com.dimafeng" %% "testcontainers-scala-postgresql" % testContainersVersion % Test,
       "org.tpolecat" %% "skunk-core" % "0.6.3",
       "org.scalatest" %% "scalatest-flatspec" % "3.2.18" % "test,it",
-      "org.postgresql" % "postgresql" % "42.7.1",
+      "org.postgresql" % "postgresql" % "42.7.2",
       "org.reactivemongo" %% "reactivemongo" % "1.0.10",
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
       "org.wvlet.airframe" %% "airframe-ulid" % "24.1.2",
-      "org.scalatestplus" %% "scalacheck-1-17" % "3.2.17.0" % Test,
+      "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test,
       "com.lihaoyi" %% "fansi" % "0.4.0"
     )
   )
