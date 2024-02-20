@@ -24,7 +24,7 @@ lazy val scala3 = project
     manualTestSettings,
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
-      "org.scalatest" %% "scalatest-flatspec" % "3.2.17" % Test,
+      "org.scalatest" %% "scalatest-flatspec" % "3.2.18" % Test,
       "dev.zio" %% "zio" % "2.0.21",
       "dev.zio" %% "zio-test" % "2.0.21" % Test
     )
@@ -44,7 +44,7 @@ lazy val scala2 = project
       "com.dimafeng" %% "testcontainers-scala-scalatest" % testContainersVersion % Test,
       "com.dimafeng" %% "testcontainers-scala-postgresql" % testContainersVersion % Test,
       "org.tpolecat" %% "skunk-core" % "0.6.3",
-      "org.scalatest" %% "scalatest-flatspec" % "3.2.17" % "test,it",
+      "org.scalatest" %% "scalatest-flatspec" % "3.2.18" % "test,it",
       "org.postgresql" % "postgresql" % "42.7.1",
       "org.reactivemongo" %% "reactivemongo" % "1.0.10",
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
