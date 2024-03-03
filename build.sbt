@@ -1,7 +1,7 @@
 name := "blog-code-samples"
 
 val scala2Version = "2.13.13"
-val scala3Version = "3.3.1"
+val scala3Version = "3.3.3"
 
 lazy val cats = project
   .in(file("cats"))
