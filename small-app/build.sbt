@@ -4,7 +4,7 @@ name := "small-app"
 scalaVersion := "3.3.0"
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "os-lib" % "0.9.3"
+  "com.lihaoyi" %% "os-lib" % "0.10.0"
 )
 
 //sbt-assembly related settings
