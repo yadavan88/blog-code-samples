@@ -10,3 +10,5 @@ project/project/**
 **/metals.sbt
 **/.idea/**
 .dummy
+**/.DS_Store
+**/.scala-build/**
