@@ -18,3 +18,4 @@ Blog Links
 - [Scala Made Simple for Beginners](https://yadukrishnan.live/scala-made-simple-for-beginners-a-gentle-introduction-to-kickstarting-your-scala-learning)
 - [Table Based Testing with ScalaTet](https://yadukrishnan.live/effective-test-parameterization-with-scalatest-tables)
 - [Building Java Project with Scala-CLI](https://yadukrishnan.live/developing-java-applications-with-scala-cli)
+- [Custom SBT Task to List Module Dependencies](https://yadukrishnan.live/custom-sbt-task-to-list-direct-dependencies-of-a-project)
