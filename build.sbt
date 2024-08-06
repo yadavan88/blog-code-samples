@@ -25,8 +25,8 @@ lazy val scala3 = project
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
       "org.scalatest" %% "scalatest-flatspec" % "3.2.19" % Test,
-      "dev.zio" %% "zio" % "2.1.6",
-      "dev.zio" %% "zio-test" % "2.1.6" % Test
+      "dev.zio" %% "zio" % "2.1.7",
+      "dev.zio" %% "zio-test" % "2.1.7" % Test
     )
   )
 
