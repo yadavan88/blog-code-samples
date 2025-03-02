@@ -19,3 +19,4 @@ Blog Links
 - [Table Based Testing with ScalaTet](https://yadukrishnan.live/effective-test-parameterization-with-scalatest-tables)
 - [Building Java Project with Scala-CLI](https://yadukrishnan.live/developing-java-applications-with-scala-cli)
 - [Custom SBT Task to List Module Dependencies](https://yadukrishnan.live/custom-sbt-task-to-list-direct-dependencies-of-a-project)
+- [Generic CSV Parser in Scala 3](https://yadukrishnan.live/a-generic-approach-to-parsing-csv-into-case-classes-in-scala-3)
