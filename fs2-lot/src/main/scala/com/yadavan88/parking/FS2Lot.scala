@@ -40,18 +40,17 @@ object FS2Lot {
       lotRef: Ref[IO, ParkingLot],
       pausedRef: SignallingRef[IO, Boolean]
   ): Stream[IO, Car] = {
-    Stream.sleep[IO](10.seconds) *>
-      Stream
-        .awakeEvery[IO](outgoingCarSimulationRate)
-        .interruptWhen(pausedRef)
-        .evalMap { _ =>
-          for {
-            lot <- lotRef.get
-            occupiedSpots = lot.spots.filter(_.isOccupied)
-            spot <- IO(occupiedSpots(Random.nextInt(occupiedSpots.size)))
-          } yield spot.carId.map(id => Car(id, Some(spot.id), Some(spot.floor)))
-        }
-        .unNone
+    Stream
+      .awakeEvery[IO](outgoingCarSimulationRate)
+      .interruptWhen(pausedRef)
+      .evalMap { _ =>
+        for {
+          lot <- lotRef.get
+          occupiedSpots = lot.spots.filter(_.isOccupied)
+          spot <- IO(occupiedSpots(Random.nextInt(occupiedSpots.size)))
+        } yield spot.carId.map(id => Car(id, Some(spot.id), Some(spot.floor)))
+      }
+      .unNone
   }
 
   def parkCar(lotRef: Ref[IO, ParkingLot]): Pipe[IO, Car, Car] = { cars =>
