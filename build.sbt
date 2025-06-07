@@ -54,6 +54,17 @@ lazy val scala2 = project
     )
   )
 
+lazy val fs2_lot = project
+  .in(file("fs2-lot"))
+  .settings(
+    name := "fs2-lot",
+    scalaVersion := scala3Version,
+    libraryDependencies ++= Seq(
+      "co.fs2" %% "fs2-core" % "3.12.0",
+      "co.fs2" %% "fs2-io" % "3.12.0"
+    )
+  )
+
 lazy val ManualTestConfig = config("manual") extend (Test)
 lazy val manualTestSettings = inConfig(ManualTestConfig)(Defaults.testSettings)
 
