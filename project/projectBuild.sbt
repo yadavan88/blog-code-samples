@@ -1,1 +1,1 @@
-libraryDependencies += "com.lihaoyi" %% "fansi" % "0.5.0"
+libraryDependencies += "com.lihaoyi" %% "fansi" % "0.5.1"
