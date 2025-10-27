@@ -30,7 +30,7 @@ lazy val scala3 = project
     )
   )
 
-val testContainersVersion = "0.43.0"
+val testContainersVersion = "0.43.6"
 
 lazy val scala2 = project
   .in(file("scala2"))
