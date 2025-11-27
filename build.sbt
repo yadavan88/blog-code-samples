@@ -1,6 +1,6 @@
 name := "blog-code-samples"
 
-val scala2Version = "2.13.17"
+val scala2Version = "2.13.18"
 val scala3Version = "3.7.4"
 
 lazy val cats = project
