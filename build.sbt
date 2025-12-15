@@ -43,7 +43,7 @@ lazy val scala2 = project
     libraryDependencies ++= Seq(
       "com.dimafeng" %% "testcontainers-scala-scalatest" % testContainersVersion % Test,
       "com.dimafeng" %% "testcontainers-scala-postgresql" % testContainersVersion % Test,
-      "org.tpolecat" %% "skunk-core" % "0.6.4",
+      "org.tpolecat" %% "skunk-core" % "0.6.5",
       "org.scalatest" %% "scalatest-flatspec" % "3.2.19" % "test,it",
       "org.postgresql" % "postgresql" % "42.7.8",
       "org.reactivemongo" %% "reactivemongo" % "1.0.10",
