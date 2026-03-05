@@ -10,7 +10,7 @@ lazy val cats = project
     scalaVersion := scala2Version,
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.13.0",
-      "org.scalameta" %% "munit" % "1.2.3" % Test
+      "org.scalameta" %% "munit" % "1.2.4" % Test
     )
   )
 val diffxVersion = "0.9.0"
