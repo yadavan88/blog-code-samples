@@ -1,7 +1,7 @@
 name := "blog-code-samples"
 
 val scala2Version = "2.13.18"
-val scala3Version = "3.7.4"
+val scala3Version = "3.9.0"
 
 lazy val cats = project
   .in(file("cats"))
@@ -50,7 +50,7 @@ lazy val scala2 = project
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
       "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.2",
       "org.scalatestplus" %% "scalacheck-1-19" % "3.2.20.0" % Test,
-      "com.lihaoyi" %% "fansi" % "0.5.0"
+      "com.lihaoyi" %% "fansi" % "0.5.1"
     )
   )
 
