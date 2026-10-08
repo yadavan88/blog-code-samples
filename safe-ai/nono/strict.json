@@ -1,0 +1,38 @@
+{
+  "extends": "default",
+  "environment": {
+    "set_vars": { "DISABLE_AUTOUPDATER": "1", "ANTHROPIC_MODEL": "sonnet" }
+  },
+  "meta": { "name": "strict", "description": "Locked-down profile for coding agents" },
+  "groups": { "include": ["claude_code_macos", "codex_macos", "node_runtime", "python_runtime", "git_config"] },
+  "workdir": { "access": "readwrite" },
+  "filesystem": {
+    "read": ["~/.gitconfig"],
+    "allow": ["$TMPDIR", "~/.claude", "~/Library/Keychains"],
+    "allow_file": ["~/.claude.json"],
+    "bypass_protection": ["~/Library/Keychains"],
+    "deny": [
+      "~/.aws",
+      "~/.kube",
+      "~/.config/gh",
+      "~/.gnupg",
+      "~/.docker/config.json",
+      "~/.npmrc",
+      "~/.pypirc",
+      "~/.netrc"
+    ]
+  },
+  "network": {
+    "deny_domain": ["*.pastebin.com", "transfer.sh"],
+    "open_port": [0]
+  },
+  "open_urls": {
+    "allow_origins": [
+      "https://claude.com",
+      "https://claude.ai",
+      "https://console.anthropic.com",
+      "https://platform.claude.com"
+    ],
+    "allow_localhost": true
+  }
+}
