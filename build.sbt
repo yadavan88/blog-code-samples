@@ -1,7 +1,7 @@
 name := "blog-code-samples"
 
 val scala2Version = "2.13.18"
-val scala3Version = "3.7.4"
+val scala3Version = "3.9.0"
 
 lazy val cats = project
   .in(file("cats"))
@@ -10,7 +10,7 @@ lazy val cats = project
     scalaVersion := scala2Version,
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.13.0",
-      "org.scalameta" %% "munit" % "1.2.1" % Test
+      "org.scalameta" %% "munit" % "1.3.6" % Test
     )
   )
 val diffxVersion = "0.9.0"
@@ -24,9 +24,9 @@ lazy val scala3 = project
     manualTestSettings,
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
-      "org.scalatest" %% "scalatest-flatspec" % "3.2.19" % Test,
-      "dev.zio" %% "zio" % "2.1.23",
-      "dev.zio" %% "zio-test" % "2.1.23" % Test
+      "org.scalatest" %% "scalatest-flatspec" % "3.2.20" % Test,
+      "dev.zio" %% "zio" % "2.1.26",
+      "dev.zio" %% "zio-test" % "2.1.26" % Test
     )
   )
 
@@ -44,13 +44,13 @@ lazy val scala2 = project
       "com.dimafeng" %% "testcontainers-scala-scalatest" % testContainersVersion % Test,
       "com.dimafeng" %% "testcontainers-scala-postgresql" % testContainersVersion % Test,
       "org.tpolecat" %% "skunk-core" % "0.6.5",
-      "org.scalatest" %% "scalatest-flatspec" % "3.2.19" % "test,it",
-      "org.postgresql" % "postgresql" % "42.7.8",
+      "org.scalatest" %% "scalatest-flatspec" % "3.2.20" % "test,it",
+      "org.postgresql" % "postgresql" % "42.7.13",
       "org.reactivemongo" %% "reactivemongo" % "1.0.10",
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
-      "org.wvlet.airframe" %% "airframe-ulid" % "2025.1.21",
-      "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test,
-      "com.lihaoyi" %% "fansi" % "0.5.0"
+      "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.2",
+      "org.scalatestplus" %% "scalacheck-1-19" % "3.2.20.0" % Test,
+      "com.lihaoyi" %% "fansi" % "0.5.1"
     )
   )
 
