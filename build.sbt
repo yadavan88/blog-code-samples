@@ -10,7 +10,7 @@ lazy val cats = project
     scalaVersion := scala2Version,
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.13.0",
-      "org.scalameta" %% "munit" % "1.3.5" % Test
+      "org.scalameta" %% "munit" % "1.3.6" % Test
     )
   )
 val diffxVersion = "0.9.0"
@@ -50,7 +50,7 @@ lazy val scala2 = project
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
       "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.2",
       "org.scalatestplus" %% "scalacheck-1-19" % "3.2.20.0" % Test,
-      "com.lihaoyi" %% "fansi" % "0.5.0"
+      "com.lihaoyi" %% "fansi" % "0.5.1"
     )
   )
 
