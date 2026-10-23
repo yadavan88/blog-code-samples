@@ -48,7 +48,7 @@ lazy val scala2 = project
       "org.postgresql" % "postgresql" % "42.7.13",
       "org.reactivemongo" %% "reactivemongo" % "1.0.10",
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
-      "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.4",
+      "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.5",
       "org.scalatestplus" %% "scalacheck-1-19" % "3.2.20.0" % Test,
       "com.lihaoyi" %% "fansi" % "0.5.1"
     )
