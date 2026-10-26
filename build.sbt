@@ -14,6 +14,7 @@ lazy val cats = project
     )
   )
 val diffxVersion = "0.9.0"
+val dataSketchesVersion = "6.2.0"
 
 lazy val scala3 = project
   .in(file("scala3"))
@@ -24,6 +25,7 @@ lazy val scala3 = project
     manualTestSettings,
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
+      "org.apache.datasketches" % "datasketches-java" % dataSketchesVersion,
       "org.scalatest" %% "scalatest-flatspec" % "3.2.20" % Test,
       "dev.zio" %% "zio" % "2.1.27",
       "dev.zio" %% "zio-test" % "2.1.27" % Test
