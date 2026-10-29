@@ -14,7 +14,7 @@ lazy val cats = project
     )
   )
 val diffxVersion = "0.9.0"
-val dataSketchesVersion = "6.2.0"
+val dataSketchesVersion = "9.0.0"
 
 lazy val scala3 = project
   .in(file("scala3"))
