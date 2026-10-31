@@ -14,6 +14,7 @@ lazy val cats = project
     )
   )
 val diffxVersion = "0.9.0"
+val dataSketchesVersion = "6.2.0"
 
 lazy val scala3 = project
   .in(file("scala3"))
@@ -24,9 +25,10 @@ lazy val scala3 = project
     manualTestSettings,
     libraryDependencies ++= Seq(
       "com.softwaremill.diffx" %% "diffx-core" % diffxVersion,
+      "org.apache.datasketches" % "datasketches-java" % dataSketchesVersion,
       "org.scalatest" %% "scalatest-flatspec" % "3.2.20" % Test,
-      "dev.zio" %% "zio" % "2.1.26",
-      "dev.zio" %% "zio-test" % "2.1.26" % Test
+      "dev.zio" %% "zio" % "2.1.27",
+      "dev.zio" %% "zio-test" % "2.1.27" % Test
     )
   )
 
@@ -48,7 +50,7 @@ lazy val scala2 = project
       "org.postgresql" % "postgresql" % "42.7.14",
       "org.reactivemongo" %% "reactivemongo" % "1.0.10",
       "com.dimafeng" %% "testcontainers-scala-mongodb" % testContainersVersion % Test,
-      "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.2",
+      "org.wvlet.airframe" %% "airframe-ulid" % "2026.2.5",
       "org.scalatestplus" %% "scalacheck-1-19" % "3.2.20.0" % Test,
       "com.lihaoyi" %% "fansi" % "0.5.1"
     )
